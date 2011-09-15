@@ -5,6 +5,7 @@
 {% block body_class %}{{ package.get_package_type_display.lower }}{% endblock %}
 
 {% block packages_content %}
+     <a href="{% url packages_list %}"><- See all apps</a>
     <div class="container">
         <h2>
             {{ package.name }}
@@ -88,6 +89,19 @@
             </table>
         {% endif %}
     </div>
+    {% if package.usage and package.publish_usage %}
+        <br/>
+        <h2>
+        Usage example:
+        </h2>
+        <div class="container">
+            <div class="description">
+                <pre>{{ package.usage }}
+                </pre>
+            </div>
+        </div>
+        Example not working? Send an email to <a href="http://groups.google.com/group/pinax-users?hl=en." target="_blank">Pinax mailing list</a>.
+    {% endif %}
 {% endblock %}
 
 {% block extra_body %}

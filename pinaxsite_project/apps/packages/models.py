@@ -68,7 +68,10 @@ class Package(DateAuditModel):
     repo_url = models.URLField()
     description = models.TextField(null=True, blank=True)
     pinax_external = models.BooleanField(default=False)
-    
+
+    usage = models.TextField(null=True, blank=True)
+    publish_usage = models.BooleanField(default=False)
+
     maturity_level = models.IntegerField(choices=MATURITY_CHOICES, null=True, blank=True)
     status = models.IntegerField(choices=STATUS_CHOICES, null=True, blank=True)
     comment = models.CharField(max_length=255, null=True, blank=True)

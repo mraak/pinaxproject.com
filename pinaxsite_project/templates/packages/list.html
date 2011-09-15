@@ -17,6 +17,10 @@
                 <span class="latest">
                     Last Updated on {{ obj.latest_commit.committed_date }}
                 </span>
+
+                {% if obj.pinax_external %}
+                    <img src="/site_media/static/img/icon-external.png" alt="External Package" />
+                {% endif %}
                 
             </h2>
             {% if obj.description %}
